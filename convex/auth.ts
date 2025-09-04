@@ -30,6 +30,11 @@ export const {
     return ctx.db.insert('users', {})
   },
 
+  // Optional, but should be populated if we add custom fields
+  onUpdateUser: async (ctx, user) => {
+    await ctx.db.patch(user.userId as Id<'users'>, {})
+  },
+
   // Delete the user when they are deleted from Better Auth
   onDeleteUser: async (ctx, userId) => {
     await ctx.db.delete(userId as Id<'users'>)

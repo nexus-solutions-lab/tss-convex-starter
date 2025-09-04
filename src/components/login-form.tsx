@@ -5,7 +5,7 @@ import { Input } from '~/components/ui/input'
 import { Label } from '~/components/ui/label'
 import { Link } from '@tanstack/react-router'
 
-export function SignupForm({
+export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<'div'>) {
@@ -16,9 +16,9 @@ export function SignupForm({
           <form className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
-                <h1 className="text-2xl font-bold">Welcome</h1>
+                <h1 className="text-2xl font-bold">Welcome back</h1>
                 <p className="text-muted-foreground text-balance">
-                  Login to your Nx Lab account
+                  Login to your Acme Inc account
                 </p>
               </div>
               <div className="grid gap-3">
@@ -80,9 +80,12 @@ export function SignupForm({
                 </Button>
               </div>
               <div className="text-center text-sm">
-                Yout have an account?{' '}
-                <Link to="/auth/login" className="underline underline-offset-4">
-                  Log in
+                Don&apos;t have an account?{' '}
+                <Link
+                  to="/auth/signup"
+                  className="underline underline-offset-4"
+                >
+                  Sign up
                 </Link>
               </div>
             </div>
